@@ -26,7 +26,7 @@ export default defineConfig(({ command, mode }) => ({
     outDir: '../php-app/public/assets',
     emptyOutDir: true,
 
-    ...(mode === 'integration'
+    ...(mode === 'integrate'
       ? {
           rollupOptions: {
             input: 'src/integration.ts',
