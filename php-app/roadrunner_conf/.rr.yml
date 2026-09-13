@@ -1,0 +1,22 @@
+version: "3"
+
+server:
+  command: "php /var/www/app/worker.php"
+  relay: "pipes"
+
+http:
+  address: "0.0.0.0:8000"
+
+  pool:
+    num_workers: 4
+    max_jobs: 1000
+    max_worker_memory: 128
+
+  middleware:
+    - gzip
+
+logs:
+  mode: development
+  level: debug
+  output: stdout
+  err_output: stderr
