@@ -11,13 +11,13 @@ defineOptions({
 </script>
 
 <template>
-  <header class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <header class="flex flex-col gap-4 m-2 sm:flex-row sm:items-center sm:justify-between">
     <div>
       <p class="text-sm font-medium text-indigo-600">
         Order Management
       </p>
 
-      <h1 class="mt-1 text-2xl font-bold tracking-tight text-slate-900">
+      <h1 class="mt-1 text-2xl font-bold tracking-tight text-slate-900 example">
         Orders
       </h1>
     </div>
@@ -41,3 +41,9 @@ defineOptions({
     </div>
   </header>
 </template>
+
+<style scoped>
+  .example {
+    color: red;
+  }
+</style>

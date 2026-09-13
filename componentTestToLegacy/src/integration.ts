@@ -4,11 +4,11 @@ import AppHeader from './components/AppHeader.vue'
 import SummaryCard from './components/SummaryCard.vue'
 import OrderList from './components/OrderList.vue'
 
-import './style.css'
+import './integration.css'
 
 declare global {
   interface Window {
-    __APP_DATA__: {
+    __LEGACY_SUPPORT_PAYLOAD_INTERFACE__: {
       user: {
         id: number
         name: string
@@ -25,7 +25,7 @@ declare global {
   }
 }
 
-const payload = window.__APP_DATA__
+const payload = window.__LEGACY_SUPPORT_PAYLOAD_INTERFACE__
 
 const components = {
   'app-header': {

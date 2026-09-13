@@ -25,14 +25,14 @@ function statusClasses(status: OrderPayload['status']) {
 
 <template>
   <section
-    class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-slate-200"
+    class="overflow-hidden rounded-md m-2 shadow-sm ring-2 ring-slate-200 bg-emerald-900"
   >
-    <div class="border-b border-slate-200 px-6 py-5">
-      <h2 class="text-lg font-semibold text-slate-900">
+    <div class="border-b border-slate-200 px-3 py-1">
+      <span class="text-xl font-semibold text-slate-100">
         Orders
-      </h2>
+      </span>
 
-      <p class="mt-1 text-sm text-slate-500">
+      <p class="mt-1 text-sm text-slate-300">
         Recent customer orders.
       </p>
     </div>
@@ -41,33 +41,23 @@ function statusClasses(status: OrderPayload['status']) {
       <table class="min-w-full divide-y divide-slate-200">
         <thead class="bg-slate-50">
           <tr>
-            <th
-              class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-            >
+            <th class="px-3 py-1 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
               ID
             </th>
 
-            <th
-              class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-            >
+            <th class="px-3 py-1 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
               Product
             </th>
 
-            <th
-              class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-            >
+            <th class="px-3 py-1 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
               Quantity
             </th>
 
-            <th
-              class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-            >
+            <th class="px-3 py-1 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
               Price
             </th>
 
-            <th
-              class="px-6 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-500"
-            >
+            <th class="px-3 py-1 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
               Status
             </th>
           </tr>
@@ -79,23 +69,23 @@ function statusClasses(status: OrderPayload['status']) {
             :key="order.id"
             class="transition hover:bg-slate-50"
           >
-            <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900">
+            <td class="whitespace-nowrap px-3 py-1 text-sm font-medium text-slate-900">
               #{{ order.id }}
             </td>
 
-            <td class="whitespace-nowrap px-6 py-4 text-sm text-slate-700">
+            <td class="whitespace-nowrap px-3 py-1 text-sm text-slate-700">
               {{ order.product }}
             </td>
 
-            <td class="whitespace-nowrap px-6 py-4 text-sm text-slate-700">
+            <td class="whitespace-nowrap px-3 py-1 text-sm text-slate-700">
               {{ order.quantity }}
             </td>
 
-            <td class="whitespace-nowrap px-6 py-4 text-sm text-slate-700">
+            <td class="whitespace-nowrap px-3 py-1 text-sm text-slate-700">
               ${{ order.price.toFixed(2) }}
             </td>
 
-            <td class="whitespace-nowrap px-6 py-4">
+            <td class="whitespace-nowrap px-3 py-1">
               <span
                 class="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset"
                 :class="statusClasses(order.status)"

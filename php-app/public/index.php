@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-// require '../Vite.php';
-
 $payload = [
     'user' => [
         'id' => 1,
@@ -22,13 +20,18 @@ $payload = [
             'id' => 1002,
             'product' => 'Mouse',
             'quantity' => 1,
-            'price' => 49.99,
+            'price' => 109.99,
             'status' => 'pending',
+        ],
+        [
+            'id' => 1003,
+            'product' => 'Wrist Rest',
+            'quantity' => 3,
+            'price' => 23.99,
+            'status' => 'cancelled',
         ],
     ],
 ];
-
-// $vueJs = viteAsset('/dist/assets/index-qXAbCZMf.js');
 ?>
 
 <!DOCTYPE html>
@@ -55,15 +58,14 @@ $payload = [
     <div data-role="order-list"></div>
 
     <script>
-    window.__APP_DATA__ = <?= json_encode(
-        $payload,
-        JSON_HEX_TAG |
-        JSON_HEX_AMP |
-        JSON_HEX_APOS |
-        JSON_HEX_QUOT
-    ) ?>;
+        window.__LEGACY_SUPPORT_PAYLOAD_INTERFACE__ = <?= json_encode(
+            $payload,
+            JSON_HEX_TAG |
+            JSON_HEX_AMP |
+            JSON_HEX_APOS |
+            JSON_HEX_QUOT
+        ) ?>;
     </script>
-
     <script type="module" src="/assets/vue-app.js"></script>
 </body>
 </html>
