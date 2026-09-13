@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
+    "build:integrate": "vite build --mode integration",
     "type-check": "vue-tsc --build",
     "lint": "run-s \"lint:*\"",
     "lint:eslint": "eslint . --fix --cache",

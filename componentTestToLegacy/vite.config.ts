@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ command, mode }) => ({
   plugins: [
     vue(),
     tailwindcss(),
@@ -26,20 +26,25 @@ export default defineConfig(({ command }) => ({
     outDir: '../php-app/public/assets',
     emptyOutDir: true,
 
-    rollupOptions: {
-      input: 'src/integration.ts',
+    ...(mode === 'integration'
+      ? {
+          rollupOptions: {
+            input: 'src/integration.ts',
 
-      output: {
-        entryFileNames: 'vue-app.js',
+            output: {
+              entryFileNames: 'vue-app.js',
 
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith('.css')) {
-            return 'vue-app.css'
-          }
+              assetFileNames: (assetInfo) => {
+                if (assetInfo.name?.endsWith('.css')) {
+                  return 'vue-app.css'
+                }
 
-          return 'assets/[name][extname]'
-        },
-      },
-    },
+                return 'assets/[name][extname]'
+              },
+            },
+          },
+        }
+      : {}
+    ),
   },
 }))
