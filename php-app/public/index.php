@@ -23,7 +23,7 @@ $payload = [
             'product' => 'Mouse',
             'quantity' => 1,
             'price' => 49.99,
-            'status' => 'paid',
+            'status' => 'pending',
         ],
     ],
 ];
